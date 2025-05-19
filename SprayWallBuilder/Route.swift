@@ -4,15 +4,17 @@ import SwiftUI
 
 struct Hold: Identifiable, Codable, Equatable {
     let id: UUID
-    var x: CGFloat
-    var y: CGFloat
-    var color: String
+    var x: CGFloat      // 0.0 to 1.0 (relative X position)
+    var y: CGFloat      // 0.0 to 1.0 (relative Y position)
+    var color: String   // "blue", "green", "purple"
+    var scale: CGFloat  // default is 1.0
 
-    init(id: UUID = UUID(), x: CGFloat, y: CGFloat, color: String = "blue") {
+    init(id: UUID = UUID(), x: CGFloat, y: CGFloat, color: String = "blue", scale: CGFloat = 1.0) {
         self.id = id
         self.x = x
         self.y = y
         self.color = color
+        self.scale = scale
     }
 }
 
