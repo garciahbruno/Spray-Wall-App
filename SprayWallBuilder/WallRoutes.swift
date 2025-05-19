@@ -1,4 +1,4 @@
-// WallRoutes.swift (fully updated)
+// WallRoutes.swift (fully updated with swipe-to-delete and cleaner UI)
 
 import SwiftUI
 
@@ -8,27 +8,38 @@ struct WallRoutes: View {
     @State private var showingBuilder = false
 
     var body: some View {
-        VStack {
-            Text("Routes")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(.top)
+        ZStack {
+            Color(.systemBackground).ignoresSafeArea() // Clean background
 
-            List {
-                ForEach(routes) { route in
-                    NavigationLink(destination: RouteDetailView(
-                        wallImage: UIImage(contentsOfFile: getImagePath(for: wall.imageName).path)!,
-                        route: route
-                    )) {
-                        Text(route.name)
+            VStack {
+                Text("Routes")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.top)
+
+                List {
+                    ForEach(routes) { route in
+                        NavigationLink(destination: RouteDetailView(
+                            wallImage: UIImage(contentsOfFile: getImagePath(for: wall.imageName).path)!,
+                            route: route
+                        )) {
+                            Text(route.name)
+                        }
+                    }
+                    .onDelete { indexSet in
+                        routes.remove(atOffsets: indexSet)
+                        RouteStorage.save(routes, for: wall.id)
                     }
                 }
-            }
+                .listStyle(.plain)
+                .scrollContentBackground(.hidden)
+                .background(Color.clear)
 
-            Button("Add Route") {
-                showingBuilder = true
+                Button("Add Route") {
+                    showingBuilder = true
+                }
+                .padding()
             }
-            .padding()
         }
         .onAppear {
             routes = RouteStorage.load(for: wall.id)
