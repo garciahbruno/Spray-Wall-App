@@ -1,4 +1,4 @@
-🧗 SprayWallBuilder
+## 🧗 SprayWallBuilder
 
 SprayWallBuilder is a SwiftUI app that lets climbers turn any spray wall into a fully interactive training tool. Whether you're training alone or logging sessions with friends, this app lets you upload a wall image, tap to place holds, and create custom routes with color-coded sequences — all from your iPhone.
 🔍 Features
@@ -15,7 +15,7 @@ SprayWallBuilder is a SwiftUI app that lets climbers turn any spray wall into a 
 
     📱 Clean SwiftUI Interface: Designed with simplicity and usability in mind for real climbers
 
-🛠 Tech Stack
+## 🛠 Tech Stack
 
     SwiftUI – Modern, declarative UI
 
@@ -25,7 +25,7 @@ SprayWallBuilder is a SwiftUI app that lets climbers turn any spray wall into a 
 
     MVVM Architecture – Modular and easy to maintain/scale
 
-🚀 Getting Started
+## 🚀 Getting Started
 
     Clone the repository
 
@@ -37,7 +37,7 @@ SprayWallBuilder is a SwiftUI app that lets climbers turn any spray wall into a 
 
     Start by uploading a spray wall photo and tapping to add holds!
 
-📌 Roadmap
+## 📌 Roadmap
 
 Add route grading system
 
@@ -47,12 +47,12 @@ Add cloud sync and backup
 
     Implement timer or session logging features
 
-🤸‍♂️ Why I Built This
+## 🤸‍♂️ Why I Built This
 
 As a climber, I wanted a simple tool to visualize and train on spray walls without needing expensive or restrictive systems. SprayWallBuilder was my solution — a lightweight app that gives climbers full control over their training setup.
 
 
-📷 Screenshots
+## 📷 Screenshots
 
 
 
